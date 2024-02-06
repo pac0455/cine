@@ -11,7 +11,7 @@ import Home, {LoaderHome} from './pages/Home.jsx';
 import Movie, {loaderMovieId} from './pages/Movie.jsx';
 import Films from './pages/Films.jsx';
 import Reservar from './pages/reservar.jsx';
-
+import Footer from './components/Footer.jsx';
 
 export const GlobalStateContext = createContext();
 
@@ -20,6 +20,7 @@ function AppLayout(){
     <>
       <Navbar />
       <Outlet />
+      <Footer/>
     </>
   );
 }

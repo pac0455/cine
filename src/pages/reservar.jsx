@@ -21,9 +21,8 @@ const Reservar = () => {
                             <option value="4">4</option>
                         </select>
                         <input type="email" name="email" placeholder="Tu pelicula" class="py-2 px-4 bg-gray-800 text-white rounded-md focus:outline-none mb-4" required />
-                        <textarea name="message" placeholder="Your Message" rows="4" class="py-2 px-4 bg-gray-800 text-white rounded-md focus:outline-none mb-4 resize-none w-full" required></textarea>
                         <button type="submit" class="bg-blue-500 py-2 px-4 text-white rounded-md hover:bg-blue-600 focus:outline-none">Send</button>
-                       
+
                     </form>
                     <p class="mt-2 text-gray-400 text-sm">We'll get back to you as soon as possible!</p>
                     <div class="mt-4 text-gray-500 text-sm">
