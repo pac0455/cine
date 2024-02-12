@@ -4,24 +4,19 @@ import palomitas from '../assets/palomitas.png';
 import { getMoviesByLetter } from "../services/getMovies";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSearch } from '@fortawesome/free-solid-svg-icons'
-import { GlobalStateContext } from '../main';
+
 import {useContext} from 'react';
 
 function Navbar() {
-    const { globalState, setGlobalState } = useContext(GlobalStateContext);
 
-    // https://dev.to/ridhikgovind/how-to-style-your-react-router-links-using-styled-components-2350
-    // https://www.youtube.com/watch?v=B0vZGTGgIdc
-    // https://flowbite.com/docs/components/navbar/
-    // https://reactrouter.com/en/main/components/nav-link
     const onKeyUp_search = async (e) => {
-        const query = e.target.value
+/*         const query = e.target.value
         if(query!=''){
             const {data} =  (await getMoviesByLetter(query))
             setGlobalState(data)
         }else{
             setGlobalState(query)
-        }
+        } */
     }
     const links = [
         { name: "Home", path: "/" },

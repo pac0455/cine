@@ -1,4 +1,3 @@
-import { useLoaderData } from "react-router-dom";
 import { getFilmNowPlaying } from "../services/getMovies";
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
@@ -7,10 +6,10 @@ import SliderItem from '../components/SliderItem';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAnglesDown } from '@fortawesome/free-solid-svg-icons'
 import { Ofertas } from '../components/ofertas';
-export const LoaderHome = ({ params }) => {
-    const data = getFilmNowPlaying()
-    return data
-}
+import { getFilmsNow } from "../redux/thunks/thunksFilmsNow";
+import { useDispatch, useSelector } from 'react-redux';
+import { useEffect } from "react";
+
 
 const Home = () => {
     const settings = {
@@ -23,13 +22,17 @@ const Home = () => {
         autoplaySpeed: 6000,
         arrows: false
     };
-
-    const data = useLoaderData().data.results;
+    const {filmsNow}  = useSelector(state => state.filmsPlayNow)
+    const dispatch = useDispatch();
+    useEffect(()=>{
+        dispatch(getFilmsNow())
+    },[])
     return (
         <>
+        <button onClick={()=>console.log(filmsNow)}>imprimir</button>
             <section className="w-full h-full">
                 <Slider className="h-full" {...settings}>
-                {data.map(item=><SliderItem key={item.id} film={item}/>)}
+                    {Object.values(filmsNow).map(item=><SliderItem key={item.id} film={item}/>)}
                 </Slider>
             </section>
             <FontAwesomeIcon className="animate-bounce m-5" size="4x" icon={faAnglesDown} />
@@ -52,7 +55,7 @@ const Home = () => {
                     </ul>
                 </div>
             </div>
-            <Ofertas img={data[18].poster_path}/>
+{/*             <Ofertas img={data[18].poster_path}/> */}
         </>
     );
 }

@@ -7,13 +7,13 @@ import {
   Outlet
 } from "react-router-dom";
 import Navbar from './components/NavBar.jsx';
-import Home, {LoaderHome} from './pages/Home.jsx';
+import Home from './pages/Home.jsx';
 import Movie, {loaderMovieId} from './pages/Movie.jsx';
 import Films from './pages/Films.jsx';
 import Reservar from './pages/reservar.jsx';
 import Footer from './components/Footer.jsx';
-
-export const GlobalStateContext = createContext();
+import {Provider} from 'react-redux';
+import {store} from './redux/store.js';
 
 function AppLayout(){
   return (
@@ -32,7 +32,6 @@ const router = createBrowserRouter([
       {
         path: '/',
         element: <Home />,
-        loader: LoaderHome
       },
       {
         path: '/film/:id',
@@ -42,7 +41,6 @@ const router = createBrowserRouter([
       {
         path: '/films',
         element: <Films/>,
-        loader: LoaderHome
       },
       {
         path: '/reservar',
@@ -56,9 +54,9 @@ function App() {
   const [globalState, setGlobalState] = useState([]);
   return (
     <React.StrictMode>
-      <GlobalStateContext.Provider value={{ globalState, setGlobalState }}>
+      <Provider store={store}>
         <RouterProvider router={router} />
-      </GlobalStateContext.Provider>
+      </Provider>
     </React.StrictMode>
   );
 }

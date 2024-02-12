@@ -26,7 +26,7 @@ export const getDataById=(id)=>{
         }
     })
 }
-export const getFilmNowPlaying=(id)=>{
+export const getFilmNowPlaying=()=>{
     return axios.get(url_get_nowPlay + '?language=es',{
         headers: {
             'Authorization' : `Bearer ${token}`
