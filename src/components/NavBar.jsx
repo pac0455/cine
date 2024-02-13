@@ -1,22 +1,23 @@
 import { NavLink, Link } from "react-router-dom";
 import React, { createContext, useState } from 'react';
 import palomitas from '../assets/palomitas.png';
-import { getMoviesByLetter } from "../services/getMovies";
+import { getFilmsNow, getMoviesByLetterThunks } from "../redux/thunks/thunksFilmsNow";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSearch } from '@fortawesome/free-solid-svg-icons'
+import {useSelector,useDispatch} from 'react-redux';
 
 import {useContext} from 'react';
 
 function Navbar() {
 
+    const dispatch=useDispatch()
     const onKeyUp_search = async (e) => {
-/*         const query = e.target.value
+        const query = e.target.value
         if(query!=''){
-            const {data} =  (await getMoviesByLetter(query))
-            setGlobalState(data)
+            dispatch(getMoviesByLetterThunks(query))
         }else{
-            setGlobalState(query)
-        } */
+            dispatch(getFilmsNow())
+        }
     }
     const links = [
         { name: "Home", path: "/" },
@@ -28,7 +29,7 @@ function Navbar() {
     const activeLinkClass = 'block py-2 px-3 text-primary-500 rounded md:p-0'
     const linkClass = 'block py-2 px-3 text-white rounded hover:text-primary-600 md:p-0'
     return (
-        <nav className="bg-darksurf-200 rounded-md mb-2">
+        <nav className="bg-darksurf-200 rounded-md mb-2 text-[#bdbab9]">
             <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
                 <Link to="/" className="flex items-center space-x-3 rtl:space-x-reverse">
                     <img src={palomitas} className="h-8" alt="Web Logo" />

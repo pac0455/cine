@@ -19,7 +19,7 @@ const SliderItem = ({ key, film }) => {
                 <div
                     className="absolute top-0 left-0 w-full h-[80vh] "
                     style={{
-                        background: `url(https://image.tmdb.org/t/p/original/${film.backdrop_path})`,
+                        backgroundImage: `url(https://image.tmdb.org/t/p/original/${film.backdrop_path})`,
                         backgroundSize: "cover",
                     }}
                 ></div>

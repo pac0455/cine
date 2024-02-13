@@ -1,5 +1,5 @@
 import { setFilms,startLoadingFilms } from '../slice/sliceFilmsow';
-import { getFilmNowPlaying } from "../../services/getMovies";
+import { getFilmNowPlaying,getMoviesByLetter} from "../../services/getMovies";
 
 
 export const getFilmsNow = () => {
@@ -14,11 +14,11 @@ export const getFilmsNow = () => {
         }
     }
 }
-export const getMovies = () => {
+export const getMoviesByLetterThunks = (string) => {
     return async (dispatch, getState) => {
         dispatch(startLoadingFilms())
         try {
-            const res = await getMovies();
+            const res = await getMoviesByLetter(string);
             const data=res.data.results
             dispatch(setFilms({...data}))
         } catch (error) {

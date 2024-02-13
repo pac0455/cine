@@ -2,7 +2,8 @@ import {createSlice} from '@reduxjs/toolkit';
 export const sliceFilmsNow=createSlice({
     name: 'filmsNowPlaying',
     initialState:{
-        filmsNow:[]
+        filmsNow:[],
+        fav:[]
     },
     reducers:{
         startLoadingFilms: (state) => {
@@ -14,5 +15,5 @@ export const sliceFilmsNow=createSlice({
     }
 })
 
-export const {setFilms,startLoadingFilms}=sliceFilmsNow.actions
+export const {setFilms,startLoadingFilms,setFav}=sliceFilmsNow.actions
 export default sliceFilmsNow.reducer

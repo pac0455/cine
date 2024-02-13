@@ -12,6 +12,11 @@ import { useEffect } from "react";
 
 
 const Home = () => {
+    let fav=localStorage.getItem('fav')
+    if(fav==undefined || fav ==null){
+        let fav=[]
+        localStorage.setItem('fav',JSON.stringify(fav))
+    }
     const settings = {
         dots: false,
         infinite: true,
@@ -24,12 +29,12 @@ const Home = () => {
     };
     const {filmsNow}  = useSelector(state => state.filmsPlayNow)
     const dispatch = useDispatch();
+
     useEffect(()=>{
         dispatch(getFilmsNow())
     },[])
     return (
         <>
-        <button onClick={()=>console.log(filmsNow)}>imprimir</button>
             <section className="w-full h-full">
                 <Slider className="h-full" {...settings}>
                     {Object.values(filmsNow).map(item=><SliderItem key={item.id} film={item}/>)}
@@ -55,7 +60,7 @@ const Home = () => {
                     </ul>
                 </div>
             </div>
-{/*             <Ofertas img={data[18].poster_path}/> */}
+            <Ofertas/>
         </>
     );
 }

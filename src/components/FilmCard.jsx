@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import React, { useContext, useEffect, useState } from "react";
 import { getDataById } from '../services/getMovies';
-const MovieCard = ({ film }) => {
+const FilmCard = ({ film }) => {
     const [details, setDetails] = useState();
     const [genres, setGenres] = useState([]);
 
@@ -35,4 +35,4 @@ const MovieCard = ({ film }) => {
         </div>
     );
 }
-export default MovieCard;
+export default FilmCard;
