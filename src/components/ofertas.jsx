@@ -7,7 +7,7 @@ export const Ofertas = ({ img }) => {
     console.log(img);
     return (
         <>
-            <div className="w-full h-[40rem]   flex items-center justify-around ">
+            <div className="w-full h-[40rem]   flex items-center justify-around text-white">
 
                 <div className="h-[35rem] w-80 bg-gray-900 rounded-xl z-10 shadow-xl shadow-black/90 flex flex-col justify-between">
                     <div>
