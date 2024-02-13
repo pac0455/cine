@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHeart } from '@fortawesome/free-solid-svg-icons'
 import { useSelector, useDispatch } from 'react-redux';
-import { setFav } from '../redux/slice/sliceFilmsow';
+
 export const loaderMovieId = ({ params }) => {
     const { id } = params
     return getDataById(id)

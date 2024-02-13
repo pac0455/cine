@@ -3,7 +3,7 @@ export const sliceFilmsNow=createSlice({
     name: 'filmsNowPlaying',
     initialState:{
         filmsNow:[],
-        fav:[]
+        entradas:[]
     },
     reducers:{
         startLoadingFilms: (state) => {
@@ -11,9 +11,16 @@ export const sliceFilmsNow=createSlice({
         },
         setFilms:(state,action)=>{
             state.filmsNow=action.payload
+        },
+        addEntrada:(state,action)=>{
+            state.entradas.push(action.payload)
+        },
+        deleteEntrada:(state,action)=>{
+            state.entradas=state.entradas.filter(entrada=>entrada.id!=action.payload)
         }
+
     }
 })
 
-export const {setFilms,startLoadingFilms,setFav}=sliceFilmsNow.actions
+export const {setFilms,startLoadingFilms,addEntrada,deleteEntrada}=sliceFilmsNow.actions
 export default sliceFilmsNow.reducer

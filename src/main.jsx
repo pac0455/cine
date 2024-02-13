@@ -15,6 +15,7 @@ import Footer from './components/Footer.jsx';
 import {Provider} from 'react-redux';
 import {store} from './redux/store.js';
 import Favoritos  from './pages/Favoritos.jsx';
+import Entradas from './pages/Entradas.jsx';
 
 function AppLayout(){
   return (
@@ -50,6 +51,10 @@ const router = createBrowserRouter([
       {
         path: '/favoritos',
         element : <Favoritos/>
+      },
+      {
+        path: '/entradas',
+        element : <Entradas/>
       }
     ]
   }
