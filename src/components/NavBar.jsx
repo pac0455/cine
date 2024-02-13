@@ -22,7 +22,8 @@ function Navbar() {
     const links = [
         { name: "Home", path: "/" },
         { name: "Films", path: "/films" },
-        { name: "Reservar", path: "/reservar" },
+        { name: "Favoritos", path: "/favoritos" },
+
 
     ];
 

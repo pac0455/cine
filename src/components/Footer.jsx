@@ -2,21 +2,21 @@ const Footer = () => {
     return (
         <footer className="flex flex-col items-center bg-gray-800 text-center text-white dark:bg-neutral-600 rounded-2xl mt-10">
         <div className="container pt-9">
-            <div className="mb-9 flex justify-center">
+            <div className="mb-9 flex justify-center text-white">
                 <a href="#!" className="mr-9 text-neutral-800 dark:text-neutral-200">
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
                         className="h-4 w-4"
                         fill="currentColor"
                         viewBox="0 0 24 24">
-                        <path
+                        <path className="text-white"
                             d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z" />
                     </svg>
                 </a>
                 <a href="#!" className="mr-9 text-neutral-800 dark:text-neutral-200">
-                    <svg
+                    <svg 
                         xmlns="http://www.w3.org/2000/svg"
-                        className="h-4 w-4"
+                        className="h-4 w-4 text-white"
                         fill="currentColor"
                         viewBox="0 0 24 24">
                         <path
@@ -26,7 +26,7 @@ const Footer = () => {
                 <a href="#!" className="mr-9 text-neutral-800 dark:text-neutral-200">
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
-                        className="h-5 w-5"
+                        className="h-5 w-5 text-white"
                         fill="currentColor"
                         viewBox="0 0 24 24">
                         <path
@@ -38,7 +38,7 @@ const Footer = () => {
                 <a href="#!" className="mr-9 text-neutral-800 dark:text-neutral-200">
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
-                        className="h-4 w-4"
+                        className="h-4 w-4 text-white"
                         fill="currentColor"
                         viewBox="0 0 24 24">
                         <path
@@ -48,7 +48,7 @@ const Footer = () => {
                 <a href="#!" className="mr-9 text-neutral-800 dark:text-neutral-200">
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
-                        className="h-4 w-4"
+                        className="h-4 w-4 text-white"
                         fill="currentColor"
                         viewBox="0 0 24 24">
                         <path
@@ -58,7 +58,7 @@ const Footer = () => {
                 <a href="https://github.com/pac0455/cine" className="text-neutral-800 dark:text-neutral-200">
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
-                        className="h-4 w-4"
+                        className="h-4 w-4 text-white"
                         fill="currentColor"
                         viewBox="0 0 24 24">
                         <path

@@ -1,10 +1,10 @@
-import { useParams, useLoaderData } from 'react-router-dom';
+import { useParams, useLoaderData, Link } from 'react-router-dom';
 import { getDataById } from '../services/getMovies';
 import { useEffect, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHeart } from '@fortawesome/free-solid-svg-icons'
-import { useSelector,useDispatch } from 'react-redux';
-import {setFav} from '../redux/slice/sliceFilmsow';
+import { useSelector, useDispatch } from 'react-redux';
+import { setFav } from '../redux/slice/sliceFilmsow';
 export const loaderMovieId = ({ params }) => {
     const { id } = params
     return getDataById(id)
@@ -15,20 +15,21 @@ const Movie = () => {
     const spanClassMenos18 = ' p-1 rounded-xl bg-green-700';
     const dispatch = useDispatch();
     const { data } = useLoaderData();
-    const { title,id, adult, genres, status, original_language, release_date, popularity, poster_path, overview } = data;
+    const { title, id, adult, genres, status, original_language, release_date, popularity, poster_path, overview } = data;
+
 
     const [existe, setExiste] = useState(null);
 
     useEffect(() => {
         let favPelis = JSON.parse(localStorage.getItem('fav'));
         const peliExiste = favPelis.find(peli => peli.id === id);
-        setExiste(!!peliExiste); // Convierte el valor a booleano
+        setExiste(!!peliExiste);
     }, [id]);
 
     const handleFav = () => {
         let favPelis = JSON.parse(localStorage.getItem('fav'));
         const peliExiste = favPelis.find(peli => peli.id === id);
-        
+
         if (peliExiste) {
             let peliFilter = favPelis.filter(peli => peli.id !== id);
             localStorage.setItem('fav', JSON.stringify(peliFilter));
@@ -40,13 +41,11 @@ const Movie = () => {
     };
 
     const Btnfav = existe ? (
-        <FontAwesomeIcon icon={faHeart} className="text-red-400"/>
+        <FontAwesomeIcon icon={faHeart} className="text-red-400" />
     ) : (
-        <FontAwesomeIcon icon={faHeart} className="text-gray-400"/>
+        <FontAwesomeIcon icon={faHeart} className="text-gray-400" />
     );
 
-
-    
 
     return (
         <>
@@ -67,10 +66,11 @@ const Movie = () => {
                     <p>Fecha de lanzamiento: {release_date}</p>
                     <p>Popularidad: {popularity}</p>
                     <button className='p-3 bg-gray-600 rounded-xl shadow-xl hover:bg-gray-800 transition-all' onClick={handleFav}>
-                    {Btnfav}
+                        {Btnfav}
                     </button>
                 </div>
             </div>
+            <Link to={"/reservar/" + id} className='bg-green-500 text-black font-medium rounded-lg p-2 w-[80%] mt-9'>Comprar entrada</Link>
             <div className="w-full mt-4 text-xl text-left text-[#bdbab9]">
                 <h1 className='font-bold text-3xl'>Sinopsis:</h1>
                 {overview}

@@ -14,6 +14,7 @@ import Reservar from './pages/reservar.jsx';
 import Footer from './components/Footer.jsx';
 import {Provider} from 'react-redux';
 import {store} from './redux/store.js';
+import Favoritos  from './pages/Favoritos.jsx';
 
 function AppLayout(){
   return (
@@ -43,8 +44,12 @@ const router = createBrowserRouter([
         element: <Films/>,
       },
       {
-        path: '/reservar',
+        path: '/reservar/:id',
         element : <Reservar/>
+      },
+      {
+        path: '/favoritos',
+        element : <Favoritos/>
       }
     ]
   }
