@@ -10,7 +10,7 @@ function Favoritos() {
     console.log(fav);
     return (
 
-        <div className='flex flex-wrap justify-between gap-8'>
+        <div className='flex flex-wrap  gap-8'>
             {fav ? (
                 <>
                     {fav.map(film => <FilmCard key={film.id} film={film} />)}

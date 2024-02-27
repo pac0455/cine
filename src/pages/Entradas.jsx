@@ -9,11 +9,10 @@ function Entradas() {
     <div className='flex items-center w-full flex-wrap min-h-96'>
         {
             entradas.length!=0 ? (
-
                 entradas.map(entrada=><Entrada entrada={entrada}/>)
             ):
             (
-                <p className='w-full  text-3xl text-white font-blod'>Todavia no tienes ni una entrada</p>
+                <p className='w-full text-3xl text-white font-blod'>Todavia no tienes ni una entrada</p>
             )
             
         }

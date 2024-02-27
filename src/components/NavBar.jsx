@@ -23,8 +23,7 @@ function Navbar() {
         { name: "Home", path: "/" },
         { name: "Films", path: "/films" },
         { name: "Favoritos", path: "/favoritos" },
-
-
+        { name: "Entradas", path: "/entradas" },
     ];
 
     const activeLinkClass = 'block py-2 px-3 text-primary-500 rounded md:p-0'

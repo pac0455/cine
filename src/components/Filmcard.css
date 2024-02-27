@@ -1,0 +1,4 @@
+#padre:hover #oculto{
+    transition: 500ms;
+    display: block;
+}

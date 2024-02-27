@@ -13,7 +13,7 @@ const Films = () => {
     return (
         <section>
             <h1 className='font-rubiksh text-3xl text-gray-200 font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl'>Estrenos</h1>
-            <div className=" flex justify-around gap-y-6 gap-x-2 flex-wrap">
+            <div className=" flex justify-around gap-y-20 gap-x-8 flex-wrap">
                 {filmsNow ? (
                     <>
                         {Object.values(filmsNow).map(film => <FilmCard key={film.id} film={film} />)}
